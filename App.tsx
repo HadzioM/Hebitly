@@ -1,14 +1,17 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Text, View, StyleSheet } from 'react-native';
+import HomeScreen from './app/screens/HomeScreen';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { ThemeProvider } from './app/context/ThemeContext';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Welcome to Habitly!</Text>
-      <Text style={styles.subtitle}>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaProvider>
+      <ThemeProvider>
+        <HomeScreen />
+      </ThemeProvider>
+    </SafeAreaProvider>
   );
 }
 
