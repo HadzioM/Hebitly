@@ -28,6 +28,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const [isDark, setIsDark] = useState(colorScheme === 'dark');
 
   useEffect(() => {
+    // Handle null colorScheme value (fallback to light mode)
     setIsDark(colorScheme === 'dark');
   }, [colorScheme]);
 
